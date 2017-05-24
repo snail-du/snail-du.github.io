@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('null')
+            background-image: url('py.jpg')
             /*post*/
         
     }
@@ -218,65 +218,49 @@
 
                 <ul>
 <li>Hexo</li>
-<li>Blog<br>
-catagories:</li>
+<li>Blog catagories:</li>
 <li>Hexo</li>
 </ul>
 <hr>
 <blockquote>
-<p>Ported Theme of <a href="https://github.com/Huxpro/huxpro.github.io" target="_blank" rel="external">Hux Blog</a>, Thank <a href="https://github.com/Huxpro" target="_blank" rel="external">Huxpro</a> for designing such a flawless theme.</p>
-<p>This BeanTech theme created by <a href="http://beantech.org" target="_blank" rel="external">YuHsuan</a> modified from the original Porter <a href="http://kaijun.rocks/hexo-theme-huxblog/" target="_blank" rel="external">Kaijun</a></p>
+<p><a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime text3</a>是windows下非常好用的编辑器，插件多，界面酷，属于轻量级的编辑器。经过配置，可以作为python的编译器使用，下面是我的配置方法。</p>
 </blockquote>
-<h1 id="live-demo"><a href="http://beantech.org" target="_blank" rel="external">Live Demo</a></h1>
+<h1 id="下载安装python">下载安装<a href="https://www.python.org/downloads/" target="_blank" rel="external">Python</a></h1>
 <hr>
-<p><img src="http://beantech.org/img/beantech-desktop.png" alt="BeanTech Desktop"></p>
-<h1 id="usage">Usage</h1>
+<p><img src="python.png" alt="download python"></p>
+<h1 id="配置sublime-text3">配置sublime text3</h1>
 <hr>
-<p>I publish the whole project for your convenience, so you can just follow the instruction down below, then you can easily customiz your own blog!</p>
-<p>Let’s begin!!!</p>
-<h2 id="init">Init</h2>
+<p>点击Tools -&gt; Build System -&gt; New Build System…</p>
+<p>复制下面的代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="string">"cmd"</span>: [<span class="string">"D:\Python36\python.exe"</span>,<span class="string">"-u"</span>,<span class="string">"<span class="variable">$file</span>"</span>],</div><div class="line"><span class="string">"file_regex"</span>: <span class="string">"^[ ]*File \"(...*?)\", line ([0-9]*)"</span>,</div><div class="line"><span class="string">"selector"</span>: <span class="string">"source.python"</span>,</div><div class="line"><span class="string">"encoding"</span>: <span class="string">"cp936"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>“D:\Python36\python.exe” 是你的python安装路径，然后保存为 Python.sublime-build</p>
+<h2 id="测试">测试</h2>
 <hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech</div><div class="line"><span class="built_in">cd</span> hexo-beantech</div><div class="line">npm install</div></pre></td></tr></table></figure>
-<h2 id="modify">Modify</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">array = [1,2,5,3,6,8,4]</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)-1,0,-1):</div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(0,i):</div><div class="line">        <span class="keyword">if</span> array[j]&gt;array[j+1]:</div><div class="line">            array[j],array[j+1] = array[j+1],array[j]</div><div class="line"></div><div class="line"><span class="built_in">print</span> (array)</div></pre></td></tr></table></figure>
+<p>然后按 Ctrl+b 会出现如下图所示的运行结果，说明配置成功<br>
+<img src="result.png" alt="download python"></p>
+<h2 id="插件">插件</h2>
 <hr>
-<p>Modify <code>_config.yml</code> file with your own info.<br>
-Especially the section:</p>
-<h3 id="deployment">Deployment</h3>
-<p>Replace to your own repo!</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/&lt;yourAccount&gt;/&lt;repo&gt;</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">&lt;your-branch&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="sidebar-settings">Sidebar settings</h3>
-<p>Copy your avatar image to <code>&lt;root&gt;/img/</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">sidebar:</span> <span class="literal">true</span>    <span class="comment"># whether or not using Sidebar.</span></div><div class="line"><span class="attr">sidebar-about-description:</span> <span class="string">"&lt;your description&gt;"</span></div><div class="line"><span class="attr">sidebar-avatar:</span> <span class="string">img/&lt;your</span> <span class="string">avatar</span> <span class="string">path&gt;</span></div></pre></td></tr></table></figure>
-<p>and activate your personal widget you like</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">widgets:</span>         <span class="comment"># here are widget you can use, you can comment out</span></div><div class="line"><span class="bullet">-</span> <span class="string">featured-tags</span></div><div class="line"><span class="bullet">-</span> <span class="string">short-about</span></div><div class="line"><span class="bullet">-</span> <span class="string">recent-posts</span></div><div class="line"><span class="bullet">-</span> <span class="string">friends-blog</span></div><div class="line"><span class="bullet">-</span> <span class="string">archive</span></div><div class="line"><span class="bullet">-</span> <span class="string">category</span></div></pre></td></tr></table></figure>
-<p>if you want to add sidebar widget, please add at <code>layout/_widget</code>.</p>
-<h3 id="signature-setup">Signature Setup</h3>
-<p>Copy your signature image to <code>&lt;root&gt;/img/signature</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">signature:</span> <span class="literal">true</span>   <span class="comment"># show signature</span></div><div class="line"><span class="attr">signature-img:</span> <span class="string">img/signature/&lt;your-signature-ID&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="go-to-top-icon-setup">Go to top icon Setup</h3>
-<p>My icon is using iron man, you can change to your own icon at <code>css/image</code>.</p>
-<h3 id="post-tag">Post tag</h3>
-<p>You can decide to show post tags or not.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">home_posts_tag:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
-<p><img src="home_posts_tag-true.png" alt="home_posts_tag-true"></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">home_posts_tag:</span> <span class="literal">false</span></div></pre></td></tr></table></figure>
-<p><img src="home_posts_tag-false.png" alt="home_posts_tag-false"></p>
-<h3 id="markdown-render">Markdown render</h3>
-<p>My markdown render engine plugin is <a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="external">hexo-renderer-markdown-it</a>.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Markdown-it config</span></div><div class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></div><div class="line"><span class="attr">markdown:</span></div><div class="line"><span class="attr">  render:</span></div><div class="line"><span class="attr">    html:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    xhtmlOut:</span> <span class="literal">false</span></div><div class="line"><span class="attr">    breaks:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    linkify:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    typographer:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    quotes:</span> <span class="string">'“”‘’'</span></div></pre></td></tr></table></figure>
-<p>and if you want to change the header anchor ‘ℬ’, you can go to <code>layout/post.ejs</code> to change it.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span>(<span class="string">"https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        anchors.options = &#123;</div><div class="line">          <span class="attr">visible</span>: <span class="string">'hover'</span>,</div><div class="line">          <span class="attr">placement</span>: <span class="string">'left'</span>,</div><div class="line">          <span class="attr">icon</span>: ℬ <span class="comment">// this is the header anchor "unicode" icon</span></div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
-<h2 id="hexo-basics">Hexo Basics</h2>
-<hr>
-<p>Some hexo command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo new post <span class="string">"&lt;post name&gt;"</span> <span class="comment"># you can change post to another layout if you want</span></div><div class="line">hexo clean &amp;&amp; hexo generate <span class="comment"># generate the static file</span></div><div class="line">hexo server <span class="comment"># run hexo in local environment</span></div><div class="line">hexo deploy <span class="comment"># hexo will push the static files automatically into the specific branch(gh-pages) of your repo!</span></div></pre></td></tr></table></figure>
-<h1 id="have-fun-_">Have fun ^_^</h1>
-<hr>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<p>Please <a class="github-button" href="https://github.com/YenYuHsuan/hexo-theme-beantech" data-icon="octicon-star" aria-label="Star YenYuHsuan/hexo-theme-beantech on GitHub" target="_blank" rel="external">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/YenYuHsuan" aria-label="Follow @YenYuHsuan on GitHub" target="_blank" rel="external">Follow</a> would also be appreciated!<br>
-Peace!</p>
+<p>Sublime text3 有好多好用的插件，下面是我的插件列表，安装比较简单，请大家自行摸索</p>
+<ul>
+<li>Alignment</li>
+<li>AutoFileName</li>
+<li>Djaneiro</li>
+<li>DocBlockr</li>
+<li>DocBlockr Python</li>
+<li>Emmet</li>
+<li>EmmetOneLine</li>
+<li>Git</li>
+<li>JsFormat</li>
+<li>LESS</li>
+<li>Package Control</li>
+<li>SyncedSideBar</li>
+<li>Anaconda</li>
+<li>CSScomb</li>
+<li>SublimeCodeIntel</li>
+<li>SublimeLinter</li>
+<li>SublimeREPL</li>
+</ul>
 
                 
 
@@ -316,7 +300,7 @@ Peace!</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#live-demo"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Live Demo</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#usage"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Usage</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#init"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Init</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#modify"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Modify</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#deployment"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">Deployment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sidebar-settings"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">Sidebar settings</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#signature-setup"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">Signature Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#go-to-top-icon-setup"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">Go to top icon Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#post-tag"><span class="toc-nav-number">2.2.5.</span> <span class="toc-nav-text">Post tag</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#markdown-render"><span class="toc-nav-number">2.2.6.</span> <span class="toc-nav-text">Markdown render</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#hexo-basics"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Hexo Basics</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#have-fun-_"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Have fun ^_^</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#下载安装python"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">下载安装Python</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#配置sublime-text3"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">配置sublime text3</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#测试"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">测试</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#插件"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">插件</span></a></li></ol></li></ol>
         
         </div>
       </aside>
